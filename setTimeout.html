@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Set Timeout</title>
+</head>
+<body style="display: flex; flex-direction: column; align-items: flex-start">
+<img height="500" width="500" src="https://media.tenor.com/images/c029bc5fdb9002533870c7ee8a6237a2/tenor.gif">
+<button id="runRecursiveSetTimeout" style="font-size: 3rem">Run Recursive setTimeout</button>
+<script>
+  const runRecursiveSetTimeout = document.getElementById('runRecursiveSetTimeout');
+  runRecursiveSetTimeout.addEventListener('click', () => {
+    const now = new Date();
+    recursiveSetTimeout();
+
+    function recursiveSetTimeout() {
+      if (new Date() - now > 5000) {
+        return;
+      }
+      setTimeout(recursiveSetTimeout);
+    }
+  });
+</script>
+</body>
+</html>

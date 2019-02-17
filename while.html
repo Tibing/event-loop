@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Set Timeout</title>
+</head>
+<body>
+<body style="display: flex; flex-direction: column; align-items: flex-start">
+<img height="500" width="500" src="https://media.tenor.com/images/c029bc5fdb9002533870c7ee8a6237a2/tenor.gif">
+<button id="runWhile" style="font-size: 3rem">Run While for 5 sec</button>
+<script>
+  const runWhile = document.getElementById('runWhile');
+
+  runWhile.addEventListener('click', () => {
+    const now = new Date();
+    while (true) {
+      if (new Date() - now > 5000) {
+        return;
+      }
+    }
+  });
+</script>
+</body>
+</html>
+

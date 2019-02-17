@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Set Timeout</title>
+</head>
+<body style="display: flex; flex-direction: column; align-items: flex-start">
+<img height="500" width="500" src="https://media.tenor.com/images/c029bc5fdb9002533870c7ee8a6237a2/tenor.gif">
+<button id="runPromise" style="font-size: 3rem">Run Recursive Promise for 5 sec</button>
+<script>
+  const runPromise = document.getElementById('runPromise');
+
+  runPromise.addEventListener('click', () => {
+    const now = new Date();
+    recursivePromise();
+
+    function recursivePromise() {
+      if (new Date() - now > 5000) {
+        return;
+      }
+
+      return Promise.resolve().then(recursivePromise);
+    }
+  });
+
+</script>
+</body>
+</html>
+
