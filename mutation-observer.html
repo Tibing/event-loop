@@ -1,0 +1,16 @@
+<body>
+  <div id="some-id"></div>
+  <script>
+    const targetNode = document.getElementById('some-id');
+    const config = { attributes: true };
+    const observer = new MutationObserver(() => {
+      console.log('mutation observer');
+    });
+
+    // Start observing the target node for configured mutations
+    observer.observe(targetNode, config);
+
+    setTimeout(() => console.log('set timeout'));
+    targetNode.setAttribute('foo', 'bar');
+  </script>
+</body>
