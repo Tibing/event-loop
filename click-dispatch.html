@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Set Timeout</title>
+</head>
+
+<body>
+  <button id="btn1">Button 1</button>
+  <script>
+    const btn1 = document.getElementById('btn1');
+
+    btn1.addEventListener('click', () => {
+      Promise.resolve().then(() => console.log('Promise 1'));
+      console.log('Listener 1');
+    });
+
+    btn1.addEventListener('click', () => {
+      Promise.resolve().then(() => console.log('Promise 2'));
+      console.log('Listener 2');
+    });
+
+    btn1.dispatchEvent(new Event('click'));
+  </script>
+</body>
+
+</html>
